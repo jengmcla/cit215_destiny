@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VueJS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="destiny-app">
+    <div v-for="card in cards" class="card" v-bind:class="card.color">
+        <img :src="card.img" />
+        <div class="health">
+            {{ card.health }}
+        </div>
+        <div v-if="card.rarity">
+            <div class="rarity rare">
+                {{ card.setNumber }}
+            </div>
+        </div>
+        <div v-else>
+            <div class="rarity legendary">
+                {{ card.setNumber }}
+            </div>
+        </div>
+        <div class="name">
+            {{ card.name }}
+        </div>
+        <div class="affl" v-bind:class="card.affl">
+            {{ card.affl }}
+        </div>
+    </div>
+</div>
+
+<!--<div id="app">-->
+<!--    {{ title }}-->
+
+<!--    &lt;!&ndash; v-for is unique to vue;-->
+<!--    kinda like an array &ndash;&gt;-->
+<!--    &lt;!&ndash;  v-bind class adds a class of cool if messages' cool is set to true  &ndash;&gt;-->
+<!--    &lt;!&ndash;  v-bind style adds a style based on what's in app.js  &ndash;&gt;-->
+<!--    <div v-for="message in messages" v-bind:class="{cool: message.cool}" v-bind:style="{color: message.color}">-->
+<!--        <h1>-->
+<!--            {{ message.name }}-->
+<!--        </h1>-->
+
+<!--        <p v-if="message.cool">-->
+<!--            This person is cool-->
+<!--        </p>-->
+<!--        <p v-else>-->
+<!--            This person sucks.-->
+<!--        </p>-->
+
+<!--    </div>-->
+<!--</div>-->
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
